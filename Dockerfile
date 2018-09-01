@@ -11,3 +11,7 @@ RUN apt-get -y update
 RUN apt-get -y install git vim
 
 COPY .gitconfig /root/.gitconfig
+
+COPY .vimrc /root/.vimrc
+RUN git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+RUN vim +PluginInstall +qall
